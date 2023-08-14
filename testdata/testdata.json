@@ -1,0 +1,12 @@
+{
+  "test1":{
+    "loginusername":"sagupta@mrccsolutions.com",
+    "loginpassword":"pass@word1",
+    "leavedate":"18"
+  },
+  "test2":{
+    "loginusername":"sagupta@mrccsolutions.com",
+    "loginpassword":"pass@word1",
+    "leavedate":"27"
+  }
+}
