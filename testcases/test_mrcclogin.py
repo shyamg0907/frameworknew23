@@ -12,26 +12,26 @@ from ddt import ddt,data,file_data,unpack
 
 @pytest.mark.usefixtures("setup")
 # @ddt
-class TestMRCCLogin(softest.TestCase):
+class TestMRCCLogin():
     log = Utils.custom_logger()
 
-    @data(*Utils.read_data_from_excel("C:\\Users\\SHYAM GUPTA\\PycharmProjects\\frameworknew23\\testdata\\testdataexcel.xlsx","Sheet1"))
-    @unpack
-    def test_search_flights(self,loginusername,loginpassword,leavedate):
-        lp=LaunchPage(self.driver, self.wait)
-        self.log.info("succesfully launched browser")
-        lp.usernamefeild(loginusername)
-        lp.passwordfeild(loginpassword)
-        lp.submitlogin()
-        time.sleep(3)
-
-        eoi = EmployeeOtherInforamtion(self.driver, self.wait)
-        eoi.clickonleavetab()
-        time.sleep(3)
-        eoi.employeeleaveaddtab()
-        time.sleep(4)
-        eoi.selectdate(leavedate)
-        time.sleep(4)
+    # @data(*Utils.read_data_from_excel("C:\\Users\\SHYAM GUPTA\\PycharmProjects\\frameworknew23\\testdata\\testdataexcel.xlsx","Sheet1"))
+    # @unpack
+    # def test_search_flights(self,loginusername,loginpassword,leavedate):
+    #     lp=LaunchPage(self.driver, self.wait)
+    #     self.log.info("succesfully launched browser")
+    #     lp.usernamefeild(loginusername)
+    #     lp.passwordfeild(loginpassword)
+    #     lp.submitlogin()
+    #     time.sleep(3)
+    #
+    #     eoi = EmployeeOtherInforamtion(self.driver, self.wait)
+    #     eoi.clickonleavetab()
+    #     time.sleep(3)
+    #     eoi.employeeleaveaddtab()
+    #     time.sleep(4)
+    #     eoi.selectdate(leavedate)
+    #     time.sleep(4)
 
     # Through json data file
     # @file_data("../testdata/testdata.json")
@@ -71,21 +71,21 @@ class TestMRCCLogin(softest.TestCase):
     #     time.sleep(4)
 
 
-    # def test_search_flights(self):
-    #     lp=LaunchPage(self.driver, self.wait)
-    #     self.log.info("succesfully launched browser")
-    #     lp.usernamefeild("sagupta@mrccsolutions.com")
-    #     lp.passwordfeild("pass@word1")
-    #     lp.submitlogin()
-    #     time.sleep(3)
-    #
-    #     eoi = EmployeeOtherInforamtion(self.driver, self.wait)
-    #     eoi.clickonleavetab()
-    #     time.sleep(3)
-    #     eoi.employeeleaveaddtab()
-    #     time.sleep(4)
-    #     eoi.selectdate("17")
-    #     time.sleep(4)
+    def test_search_flights(self):
+        lp=LaunchPage(self.driver, self.wait)
+        self.log.info("succesfully launched browser")
+        lp.usernamefeild("sagupta@mrccsolutions.com")
+        lp.passwordfeild("pass@word1")
+        lp.submitlogin()
+        time.sleep(3)
+
+        eoi = EmployeeOtherInforamtion(self.driver, self.wait)
+        eoi.clickonleavetab()
+        time.sleep(3)
+        eoi.employeeleaveaddtab()
+        time.sleep(4)
+        eoi.selectdate("17")
+        time.sleep(4)
 
 
 
